@@ -73,7 +73,7 @@ const ListDNI = () => {
                                                 color: "#404040",
                                           }}
                                     >
-                                          <b>Codigos QR Disponibles</b>
+                                          <b>Codigos QR Disponibles 1232323</b>
                                     </Typography>
                               </Grid>
 
