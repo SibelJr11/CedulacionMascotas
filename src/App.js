@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GeneradorCedula from "./components/generadorCedula";
+import InformacionMascota from "./components/informacionMascota";
+import ListDNI from "./components/listDNI";
+import RegistrarDatos from "./components/registro";
+import Pdf from "./components/viewerPdf";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      return (
+            <Router>
+                  <Routes>
+                        <Route path="/" exact element={<ListDNI />}></Route>
+                        <Route
+                              path="/cedula/:cc"
+                              exact
+                              element={<GeneradorCedula />}
+                        ></Route>
+                        <Route
+                              path="/informacion/:cc"
+                              exact
+                              element={<InformacionMascota />}
+                        ></Route>
+                        <Route
+                              path="/registro/:cc"
+                              exact
+                              element={<RegistrarDatos />}
+                        ></Route>
+                        <Route path="/pdf" exact element={<Pdf />}></Route>
+                  </Routes>
+            </Router>
+      );
 }
 
 export default App;
